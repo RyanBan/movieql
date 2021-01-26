@@ -1,0 +1,8 @@
+type Banban{
+    name: String!
+    age: Int!
+}
+
+type Query{
+    person: Banban!
+}
