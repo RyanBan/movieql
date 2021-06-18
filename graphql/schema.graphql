@@ -1,8 +1,15 @@
-type Banban{
+type Movie{
+    id: Int!
     name: String!
-    age: Int!
+    score: Int!
 }
 
 type Query{
-    person: Banban!
+    movies: [Movie]!
+    movie(id: Int!): Movie
+}
+
+type Mutation {
+    addMovie(name: String!, score: Int!): Movie!
+    deleteMovie(id: Int!): Boolean!
 }
