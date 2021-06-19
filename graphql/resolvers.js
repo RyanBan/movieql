@@ -1,10 +1,15 @@
-const banban = {
-    name: "Banban",
-    age: 22
-};
+import {getMovies} from "./db"
+
 const resolvers = {
     Query: {
-        person: () => banban
+        movies: (_, { rating, limit }) => getMovies(limit, rating)
+    //     movies: () => getMovies(),
+    //     movie: (_, {id}) => getById(id)
+    // },
+    // Mutation: {
+    //     addMovie: (_, {name, score}) => addMovie(name, score),
+    //     deleteMovie: (_, { id }) => deleteMovie(id)
+        
     }
 };
 
