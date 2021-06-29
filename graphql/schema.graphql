@@ -4,10 +4,21 @@ type Movie{
     rating: Float!
     summary: String!
     language: String!
+    genres: [String]!
+    description_intro: String!
+    yt_trailer_code: String
     medium_cover_image: String!
+    large_cover_image: String!
+    background_image: String!
+    cast: [Cast]!
+}
+
+type Cast{
+    name: String!
+    url_small_image: String!
 }
 
 type Query{
-    movies(limit: Int, rating: Float): [Movie]!
+    movies(limit: Int, rating: Float, page: Int, genre: String): [Movie]!
     movie(id: Int): Movie!
 }
