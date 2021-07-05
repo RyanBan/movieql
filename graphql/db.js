@@ -14,7 +14,7 @@ export const getMovies = (limit, rating, page, genre) => {
     REQUEST_URL += `&page=${page}`;
   }
   if (genre) {
-    REQUEST_URL += `&genre=${genre}`;
+    REQUEST_URL += `&limit=50&genre=${genre}&sort_by=download_count`;
   }
   return fetch(REQUEST_URL)
     .then((res) => res.json())
