@@ -4,7 +4,6 @@ const resolvers = {
     Query: {
         movies: (_, { rating, limit, page, genre }) => getMovies(limit, rating, page, genre),
         movie: (_, {id}) => getById(id)
-    //     movies: () => getMovies(),
     //     
     // },
     // Mutation: {
