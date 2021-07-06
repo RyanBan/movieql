@@ -5,7 +5,7 @@ const API_DETAIL_URL = "https://yts.mx/api/v2/movie_details.json?";
 export const getMovies = (limit, rating, page, genre) => {
   let REQUEST_URL = API_URL;
   if (limit > 0) {
-    REQUEST_URL += `limit=${limit}`;
+    REQUEST_URL += `&limit=${limit}`;
   }
   if (rating > 0) {
     REQUEST_URL += `&minimum_rating=${rating}`;
@@ -14,7 +14,7 @@ export const getMovies = (limit, rating, page, genre) => {
     REQUEST_URL += `&page=${page}`;
   }
   if (genre) {
-    REQUEST_URL += `&limit=50&genre=${genre}&sort_by=download_count`;
+    REQUEST_URL += `&genre=${genre}&sort_by=download_count`;
   }
   return fetch(REQUEST_URL)
     .then((res) => res.json())
